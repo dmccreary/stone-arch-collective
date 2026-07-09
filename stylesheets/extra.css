@@ -1,0 +1,19 @@
+/* Stone Arch Collective — brand palette
+   Overrides Material's "black" primary / "amber" accent with the exact
+   colours sampled from the logo. Loaded after the theme CSS, so these win. */
+[data-md-color-primary="black"] {
+  --md-primary-fg-color:        #2b3a44;
+  --md-primary-fg-color--light: #34454f;
+  --md-primary-fg-color--dark:  #202e39;
+}
+[data-md-color-accent="amber"] {
+  --md-accent-fg-color:         #b07d54;
+}
+
+/* Centre and size the logo on the home page */
+.sac-logo {
+  display: block;
+  margin: 1.5rem auto 0;
+  width: min(460px, 84%);
+  height: auto;
+}

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 277 186"
+     role="img" aria-label="Stone Arch Collective">
+
+  <!-- =====================================================================
+       STONE ARCH COLLECTIVE — logo
+       Vector rebuild of docs/img/low-res-logo.png
+
+       STRUCTURE
+         Every part below lives in its own <g> and can be repositioned or
+         resized with a single transform, e.g.  transform="translate(x,y)"
+         or  transform="translate(x,y) scale(s)".
+
+         The arch is built from ONE reusable stone (#voussoir, in <defs>).
+         Each block of the ring is just that same stone ROTATED about the
+         arch centre, so every voussoir is guaranteed identical.
+
+       GEOMETRY  (all arch parts are drawn about a local origin 0,0 which
+                  the #arch group translates to image point 138,84)
+         arch centre .... (138, 84)
+         inner radius ... 41   (edge of the opening)
+         outer radius ... 66   (outer face of the ring)
+         ring is a 180 semicircle: keystone at the crown, 3 voussoirs per
+         side, seated on two vertical foundation blocks.
+
+       PALETTE
+         stone navy ..... #34454f      keystone tan ... #c9b393
+         foundation ..... #2b3a44      title navy ..... #202e39
+         collective gold  #c19a76      cream bg ....... #fdfbfa
+       ===================================================================== -->
+
+  <defs>
+    <!-- Reusable arch stone (voussoir), drawn pointing straight up and
+         centred on the arch origin. Inner & outer faces are true arcs so
+         the stones tile seamlessly when rotated around the ring.
+         half-angle = 10.5   inner r = 41   outer r = 66 -->
+    <path id="voussoir"
+          d="M -7.472,-40.313
+             L -12.028,-64.895
+             A 66,66 0 0 1 12.028,-64.895
+             L 7.472,-40.313
+             A 41,41 0 0 0 -7.472,-40.313 Z"/>
+
+    <!-- Warm gradient for the road: bright at the far horizon, warmer in
+         the foreground. -->
+    <linearGradient id="road-fade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#f0ebe1"/>
+      <stop offset="1"   stop-color="#e4dacb"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ================================ BACKGROUND ========================
+       Cream canvas. Delete this rect for a transparent logo. -->
+  <rect id="background" x="0" y="0" width="277" height="186" fill="#fdfbfa"/>
+
+  <!-- ================================ ROAD =============================
+       Perspective path seen through the opening, receding to a horizon.
+       Drawn before the arch so the stones sit on top of it. -->
+  <g id="road">
+    <!-- road surface: narrow at the horizon, opening toward the viewer -->
+    <path d="M 110,86 L 135,86 L 168,108 L 106,108 Z" fill="url(#road-fade)"/>
+    <!-- horizon line -->
+    <line x1="103" y1="85.5" x2="150" y2="85.5"
+          stroke="#d6c9b3" stroke-width="1.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- ================================ ARCH =============================
+       The whole stone ring. Move the arch by editing this translate;
+       add "scale(s)" to resize it about its own centre. -->
+  <g id="arch" transform="translate(138,84)">
+
+    <!-- left-foundation-block : vertical pier the ring springs from -->
+    <rect id="left-foundation-block"  x="-66" y="-2" width="25" height="25"
+          rx="1" fill="#2b3a44"/>
+
+    <!-- right-foundation-block : mirror of the left pier -->
+    <rect id="right-foundation-block" x="41"  y="-2" width="25" height="25"
+          rx="1" fill="#2b3a44"/>
+
+    <!-- The six ring stones: the same #voussoir rotated into place.
+         Rotations are symmetric about the crown (0), 24.33 apart. -->
+    <use id="arch-block-1" href="#voussoir" transform="rotate(-77.83)" fill="#34454f"/><!-- lower left  -->
+    <use id="arch-block-2" href="#voussoir" transform="rotate(-53.50)" fill="#34454f"/><!-- middle left -->
+    <use id="arch-block-3" href="#voussoir" transform="rotate(-29.17)" fill="#34454f"/><!-- upper left  -->
+    <use id="arch-block-4" href="#voussoir" transform="rotate( 29.17)" fill="#34454f"/><!-- upper right -->
+    <use id="arch-block-5" href="#voussoir" transform="rotate( 53.50)" fill="#34454f"/><!-- middle right-->
+    <use id="arch-block-6" href="#voussoir" transform="rotate( 77.83)" fill="#34454f"/><!-- lower right -->
+
+    <!-- top-block : the keystone. Its own wedge — a little wider than the
+         voussoirs, flush with the ring — in warm tan.  half-angle = 15 -->
+    <path id="top-block"
+          d="M -10.612,-39.603
+             L -17.082,-63.751
+             A 66,66 0 0 1 17.082,-63.751
+             L 10.612,-39.603
+             A 41,41 0 0 0 -10.612,-39.603 Z"
+          fill="#c9b393"/>
+  </g>
+
+  <!-- ================================ MAIN TITLE ========================
+       "STONE ARCH". textLength locks the width so it stays put whatever
+       serif font the viewer has. -->
+  <g id="main-title">
+    <text x="138" y="147" text-anchor="middle"
+          font-family="'Trajan Pro', 'Cinzel', Georgia, 'Times New Roman', serif"
+          font-size="33" font-weight="400" letter-spacing="1"
+          textLength="234" lengthAdjust="spacing" fill="#202e39">STONE ARCH</text>
+  </g>
+
+  <!-- ================================ SUB TITLE =========================
+       "COLLECTIVE" flanked by two rules, in gold. -->
+  <g id="sub-title" fill="#c19a76">
+    <!-- left rule -->
+    <line x1="40"  y1="166" x2="66"  y2="166"
+          stroke="#c19a76" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- right rule -->
+    <line x1="210" y1="166" x2="236" y2="166"
+          stroke="#c19a76" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- wordmark -->
+    <text x="138" y="170" text-anchor="middle"
+          font-family="'Trajan Pro', 'Cinzel', Georgia, 'Times New Roman', serif"
+          font-size="11.5" letter-spacing="2"
+          textLength="132" lengthAdjust="spacing">COLLECTIVE</text>
+  </g>
+
+</svg>
