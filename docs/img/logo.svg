@@ -76,24 +76,31 @@
     <rect id="right-foundation-block" x="41"  y="-2" width="25" height="25"
           rx="1" fill="#2b3a44"/>
 
-    <!-- The six ring stones: the same #voussoir rotated into place.
-         Rotations are symmetric about the crown (0), 24.33 apart. -->
-    <use id="arch-block-1" href="#voussoir" transform="rotate(-77.83)" fill="#34454f"/><!-- lower left  -->
-    <use id="arch-block-2" href="#voussoir" transform="rotate(-53.50)" fill="#34454f"/><!-- middle left -->
-    <use id="arch-block-3" href="#voussoir" transform="rotate(-29.17)" fill="#34454f"/><!-- upper left  -->
-    <use id="arch-block-4" href="#voussoir" transform="rotate( 29.17)" fill="#34454f"/><!-- upper right -->
-    <use id="arch-block-5" href="#voussoir" transform="rotate( 53.50)" fill="#34454f"/><!-- middle right-->
-    <use id="arch-block-6" href="#voussoir" transform="rotate( 77.83)" fill="#34454f"/><!-- lower right -->
+    <!-- arch-ring : the seven upper blocks (6 voussoirs + keystone) as one
+         unit, lifted a touch off the piers so the springline mortar joints
+         match the gaps between the voussoirs. Nudge this translate to raise
+         or lower all seven together. -->
+    <g id="arch-ring" transform="translate(0,-3.5)">
 
-    <!-- top-block : the keystone. Its own wedge — a little wider than the
-         voussoirs, flush with the ring — in warm tan.  half-angle = 15 -->
-    <path id="top-block"
-          d="M -10.612,-39.603
-             L -17.082,-63.751
-             A 66,66 0 0 1 17.082,-63.751
-             L 10.612,-39.603
-             A 41,41 0 0 0 -10.612,-39.603 Z"
-          fill="#c9b393"/>
+      <!-- The six ring stones: the same #voussoir rotated into place.
+           Rotations are symmetric about the crown (0), 24.33 apart. -->
+      <use id="arch-block-1" href="#voussoir" transform="rotate(-77.83)" fill="#34454f"/><!-- lower left  -->
+      <use id="arch-block-2" href="#voussoir" transform="rotate(-53.50)" fill="#34454f"/><!-- middle left -->
+      <use id="arch-block-3" href="#voussoir" transform="rotate(-29.17)" fill="#34454f"/><!-- upper left  -->
+      <use id="arch-block-4" href="#voussoir" transform="rotate( 29.17)" fill="#34454f"/><!-- upper right -->
+      <use id="arch-block-5" href="#voussoir" transform="rotate( 53.50)" fill="#34454f"/><!-- middle right-->
+      <use id="arch-block-6" href="#voussoir" transform="rotate( 77.83)" fill="#34454f"/><!-- lower right -->
+
+      <!-- top-block : the keystone. Its own wedge — a little wider than the
+           voussoirs, flush with the ring — in warm tan.  half-angle = 15 -->
+      <path id="top-block"
+            d="M -10.612,-39.603
+               L -17.082,-63.751
+               A 66,66 0 0 1 17.082,-63.751
+               L 10.612,-39.603
+               A 41,41 0 0 0 -10.612,-39.603 Z"
+            fill="#c9b393"/>
+    </g>
   </g>
 
   <!-- ================================ MAIN TITLE ========================
