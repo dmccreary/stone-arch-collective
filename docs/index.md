@@ -1,3 +1,8 @@
+---
+hide:
+  - toc
+---
+
 # Stone Arch Collective
 
-![Stone Arch Logo SVG](./img/logo.svg)
+![Stone Arch Collective](img/logo.svg){ .sac-logo }

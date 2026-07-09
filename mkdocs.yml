@@ -1,0 +1,42 @@
+site_name: Stone Arch Collective
+site_url: https://dmccreary.github.io/stone-arch-collective/
+site_description: The Stone Arch Collective website.
+repo_url: https://github.com/dmccreary/stone-arch-collective
+repo_name: dmccreary/stone-arch-collective
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  logo: img/logo.svg
+  favicon: img/logo.svg
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.top
+    - content.action.edit
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
