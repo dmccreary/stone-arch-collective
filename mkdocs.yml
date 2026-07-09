@@ -5,10 +5,17 @@ repo_url: https://github.com/dmccreary/stone-arch-collective
 repo_name: dmccreary/stone-arch-collective
 edit_uri: edit/main/docs/
 
+# Hooks -- loaded as raw Python modules, not plugins (avoids name collisions).
+# `plugins/social_override.py` overrides og:image and twitter:image with the
+# page's `image:` frontmatter value when present. Pages without `image:` are
+# untouched -- mkdocs-material's default meta tags pass through.
+hooks:
+  - plugins/social_override.py
+
 theme:
   name: material
   logo: img/logo.svg
-  favicon: img/logo.svg
+  favicon: img/favicon.ico
   icon:
     repo: fontawesome/brands/github
   palette:
@@ -29,7 +36,7 @@ theme:
     - content.action.edit
 
 extra_css:
-  - stylesheets/extra.css
+  - css/extra.css
 
 markdown_extensions:
   - attr_list
@@ -40,3 +47,4 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - About the Logo: about.md

@@ -1,6 +1,7 @@
 ---
 hide:
   - toc
+image: img/low-res-logo.png
 ---
 
 # Stone Arch Collective
