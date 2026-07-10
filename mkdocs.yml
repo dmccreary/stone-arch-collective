@@ -48,3 +48,4 @@ markdown_extensions:
 nav:
   - Home: index.md
   - About the Logo: about.md
+  - Media Kit: media-kit/index.md
